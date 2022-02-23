@@ -4,7 +4,7 @@ import { saveAs } from "file-saver";
 import { toPng } from "html-to-image";
 
 const SIZES = [128, 256, 512];
-const DEFAULT_COLOR = "#000000";
+const DEFAULT_COLOR = "#F9F9F9";
 
 const getInitials = (name) =>
   name
@@ -14,9 +14,9 @@ const getInitials = (name) =>
 
 const Generator = () => {
   const [inputValue, setInputValue] = useState("John Doe");
-  const [fontSize, setFontSize] = useState(0.4);
+  const [fontScale, setFontScale] = useState(0.4);
   const [color, setColor] = useState(DEFAULT_COLOR);
-  const [currentSize, setCurrentSize] = useState(SIZES[2]);
+  const [currentSize, setCurrentSize] = useState(256);
   const [rounded, setRounded] = useState(false);
 
   function onGenerate() {
@@ -30,11 +30,14 @@ const Generator = () => {
   return (
     <div>
       <div className="mb-2">
+        <label htmlFor="initials-input" className="mr-2">
+          Initials
+        </label>
         <input
+          id="initials-input"
           className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           onChange={(e) => setInputValue(e.target.value)}
           value={inputValue}
-          placeholder="Text here"
         />
       </div>
       <div className="flex mb-2">
@@ -43,7 +46,7 @@ const Generator = () => {
 
           return (
             <div
-              className={`cursor-pointer p-2 mr-2 transition-all hover:bg-black hover:text-white duration-500 ${
+              className={`rounded-md cursor-pointer p-2 mr-2 transition-all hover:bg-black hover:text-white duration-300 ${
                 isSelected ? "bg-black text-white" : ""
               }`}
               key={size}
@@ -63,27 +66,28 @@ const Generator = () => {
           width: currentSize,
         }}
       >
-        <div style={{ fontSize: fontSize * currentSize }}>
+        <div style={{ fontSize: fontScale * currentSize }}>
           {getInitials(inputValue)}
         </div>
       </div>
       <BlockPicker
         color={color}
-        onChangeComplete={(color) => {
-          return setColor(color.hex);
-        }}
+        onChangeComplete={(color) => setColor(color.hex)}
         className="mb-2"
       />
       <div className="mb-2">
+        <label htmlFor="font-scale-input" className="mr-2">
+          Font scale
+        </label>
         <input
           className="w-32 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          onChange={(e) => setFontSize(e.target.value)}
-          value={fontSize}
-          placeholder="Font scale"
+          onChange={(e) => setFontScale(e.target.value)}
+          value={fontScale}
           type="number"
           step="0.1"
           max="1"
-          min="0"
+          min="0.1"
+          id="font-scale-input"
         />
       </div>
       <div className="mb-2">

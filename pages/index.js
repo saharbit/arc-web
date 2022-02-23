@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="p-2 bg-gray-100 min-h-screen">
+      <main className="p-2 bg-gray-200 min-h-screen">
         <div className="container mx-auto">
           <Generator />
         </div>
