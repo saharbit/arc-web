@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@supabase/supabase-js": "^1.30.6",
@@ -25,6 +26,7 @@
     "autoprefixer": "^10.4.2",
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
+    "husky": "^7.0.4",
     "postcss": "^8.4.7",
     "tailwindcss": "^3.0.23"
   }
