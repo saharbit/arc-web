@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
-import { supabase } from "../utils/supabaseClient";
+import { supabase } from "../../utils/supabaseClient";
 
 const Tasks = () => {
   const [inputValue, setInputValue] = useState("");

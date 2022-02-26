@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Generator from "./Generator";
+import Generator from "../components/Generator";
 
 export default function Home() {
   return (
