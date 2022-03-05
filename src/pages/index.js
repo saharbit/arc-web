@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Generator from "../components/Generator";
+import AvatarGenerator from "../ui/AvatarGenerator";
 
 export default function Home() {
   return (
@@ -10,9 +10,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="p-2 bg-gray-200 min-h-screen">
+      <main className="p-4">
         <div className="container mx-auto">
-          <Generator />
+          <AvatarGenerator />
         </div>
       </main>
     </div>

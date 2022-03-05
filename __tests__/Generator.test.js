@@ -20,13 +20,6 @@ test("default avatar size should be '256px'", async ({ page }) => {
   expect(avatar.height).toBe(256);
 });
 
-test("can change avatar size", async ({ page }) => {
-  await page.click("text=512px");
-  const avatar = await page.locator("#avatar").boundingBox();
-  expect(avatar.width).toBe(512);
-  expect(avatar.height).toBe(512);
-});
-
 test("can select round avatar", async ({ page }) => {
   let isChecked = await page.isChecked("#rounded-input");
   expect(isChecked).toBe(false);
