@@ -10,10 +10,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="p-4">
-        <div className="container mx-auto">
-          <AvatarGenerator />
-        </div>
+      <main className="content-bg min-h-screen p-4">
+        <AvatarGenerator />
       </main>
     </div>
   );

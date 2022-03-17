@@ -1,10 +1,10 @@
 import React from "react";
-import { getInitials } from "./utils";
+import { getInitials } from "./AvatarGenerator.helpers";
 
-const AvatarPreview = ({ inputValue, rounded, backgroundColor, currentSize, fontScale, textColor }) => {
+const AvatarPreview = ({ inputValue, rounded, backgroundColor, currentSize, fontScale, textColor, className }) => {
   return (
-    <div>
-      <div className="text-xs text-gray-500 mb-2">PREVIEW</div>
+    <div className={className}>
+      <div className="text-xs text-white mb-2">PREVIEW</div>
       <div
         id="avatar"
         className={`shadow-lg flex items-center justify-center ${rounded ? "rounded-full" : ""}`}
