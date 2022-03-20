@@ -33,7 +33,7 @@ const AvatarGenerator = () => {
           setTextColor={setTextColor}
         />
         <AvatarPreview
-          className="mb-12"
+          className="mb-8"
           inputValue={inputValue}
           rounded={rounded}
           backgroundColor={backgroundColor}

@@ -8,7 +8,7 @@ const Input = ({ value, onChange, className, id, label, ...props }) => {
       </label>
       <input
         id={id}
-        className="border-black appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none border-2 focus:border-blue-500"
+        className="appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none"
         onChange={(e) => onChange(e.target.value)}
         value={value}
         {...props}
