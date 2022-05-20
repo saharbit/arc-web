@@ -10,8 +10,8 @@ test("page title should be 'Arc'", async ({ page }) => {
 });
 
 test("default initials input placeholder should be 'John Doe'", async ({ page }) => {
-  const initialsInputValue = await page.locator('[placeholder="Search GitHub"]');
-  expect(initialsInputValue).toBe("John Doe");
+  const initialsInputValue = await page.locator('[placeholder="John Doe"]').inputValue();
+  expect(initialsInputValue).toBe("");
 });
 
 test("default avatar size should be '256px'", async ({ page }) => {
