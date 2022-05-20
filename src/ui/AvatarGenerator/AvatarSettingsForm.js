@@ -1,26 +1,41 @@
 import React from "react";
 import Input from "../../components/Input";
-import { SIZE_OPTIONS } from "./AvatarGenerator.constants";
+import { SIZE_OPTIONS, FONT_FAMILY_OPTIONS } from "./AvatarGenerator.constants";
 import SelectInput from "../../components/SelectInput";
 
 const AvatarSettingsForm = ({
   inputValue,
   setInputValue,
-  rounded,
   setRounded,
   currentSize,
   setCurrentSize,
   fontScale,
   setFontScale,
+  fontFamily,
+  setFontFamily,
 }) => {
   return (
     <div className="flex flex-col mb-8">
-      <Input label="Initials" className="mb-2" value={inputValue} onChange={setInputValue} id="initials-input" />
+      <Input
+        label="Initials"
+        placeholder="John Doe"
+        className="mb-2"
+        value={inputValue}
+        onChange={setInputValue}
+        id="initials-input"
+      />
       <SelectInput
         label="Avatar size"
         value={currentSize}
         onChange={setCurrentSize}
         options={SIZE_OPTIONS}
+        className="w-full"
+      />
+      <SelectInput
+        label="Font family"
+        value={fontFamily}
+        onChange={setFontFamily}
+        options={FONT_FAMILY_OPTIONS}
         className="w-full"
       />
       <div className="flex flex-col mb-2">
@@ -36,7 +51,7 @@ const AvatarSettingsForm = ({
           max="1"
           min="0.1"
           id="font-scale-input"
-          label="Font scale (0 - 1)"
+          label="Font scale"
         />
       </div>
       <div>

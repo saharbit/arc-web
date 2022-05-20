@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .content-bg {
-    background-image: url('../public/bg-img.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url("../public/bg-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 html {
-    font-family: 'Ubuntu', serif;
+  font-family: "Ubuntu", serif;
 }

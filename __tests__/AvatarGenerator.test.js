@@ -9,8 +9,8 @@ test("page title should be 'Arc'", async ({ page }) => {
   expect(pageTitle).toBe("Arc");
 });
 
-test("default initials input should be 'John Doe'", async ({ page }) => {
-  const initialsInputValue = await page.inputValue("input#initials-input");
+test("default initials input placeholder should be 'John Doe'", async ({ page }) => {
+  const initialsInputValue = await page.locator('[placeholder="Search GitHub"]');
   expect(initialsInputValue).toBe("John Doe");
 });
 

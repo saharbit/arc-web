@@ -1,7 +1,16 @@
 import React from "react";
 import { getInitials } from "./AvatarGenerator.helpers";
 
-const AvatarPreview = ({ inputValue, rounded, backgroundColor, currentSize, fontScale, textColor, className }) => {
+const AvatarPreview = ({
+  inputValue,
+  rounded,
+  backgroundColor,
+  currentSize,
+  fontScale,
+  textColor,
+  fontFamily,
+  className,
+}) => {
   return (
     <div className={className}>
       <div className="text-xs text-white mb-2">PREVIEW</div>
@@ -18,10 +27,11 @@ const AvatarPreview = ({ inputValue, rounded, backgroundColor, currentSize, font
           style={{
             fontSize: fontScale * currentSize.value,
             color: textColor,
+            fontFamily: fontFamily.value,
           }}
           className="cursor-default select-none"
         >
-          {getInitials(inputValue)}
+          {getInitials(inputValue) || "JD"}
         </div>
       </div>
     </div>
