@@ -18,7 +18,7 @@ const AvatarSettingsForm = ({
     <div className="flex flex-col mb-8">
       <Input
         label="Initials"
-        placeholder="John Doe"
+        placeholder="JD"
         className="mb-2"
         value={inputValue}
         onChange={setInputValue}

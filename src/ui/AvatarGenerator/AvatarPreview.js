@@ -31,7 +31,7 @@ const AvatarPreview = ({
           }}
           className="cursor-default select-none"
         >
-          {getInitials(inputValue) || "JD"}
+          {inputValue || "JD"}
         </div>
       </div>
     </div>
