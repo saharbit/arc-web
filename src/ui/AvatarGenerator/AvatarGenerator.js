@@ -20,7 +20,7 @@ const AvatarGenerator = () => {
   const [rounded, setRounded] = useState(false);
 
   return (
-    <div className="mx-auto max-w-xl">
+    <div className="mx-auto max-w-md">
       <div style={{ backgroundColor: "rgba(0, 0, 0, 0.1)" }} className="flex flex-col rounded-md p-4">
         <AvatarSettingsForm
           inputValue={inputValue}

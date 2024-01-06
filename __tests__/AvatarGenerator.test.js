@@ -9,15 +9,14 @@ test("page title should be 'Arc'", async ({ page }) => {
   expect(pageTitle).toBe("Arc");
 });
 
-test("default initials input placeholder should be 'John Doe'", async ({ page }) => {
-  const initialsInputValue = await page.locator('[placeholder="John Doe"]').inputValue();
+test("default initials input placeholder should be 'JD'", async ({ page }) => {
+  const initialsInputValue = await page.locator('[placeholder="JD"]').inputValue();
   expect(initialsInputValue).toBe("");
 });
 
-test("default avatar size should be '256px'", async ({ page }) => {
+test("avatar preview height and width should be equal", async ({ page }) => {
   const avatar = await page.locator("#avatar").boundingBox();
-  expect(avatar.width).toBe(256);
-  expect(avatar.height).toBe(256);
+  expect(avatar.width).toBe(avatar.height);
 });
 
 test("can select round avatar", async ({ page }) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { GithubPicker } from "react-color";
+import { TwitterPicker } from "react-color";
 import { DEFAULT_COLORS } from "./AvatarGenerator.constants";
 
 const ColorPickers = ({ backgroundColor, setBackgroundColor, textColor, setTextColor }) => {
@@ -7,7 +7,7 @@ const ColorPickers = ({ backgroundColor, setBackgroundColor, textColor, setTextC
     <div className="flex flex-col mb-8">
       <div className="flex flex-col mb-4">
         <div className="text-xs text-white mb-2">BACKGROUND COLOR</div>
-        <GithubPicker
+        <TwitterPicker
           color={backgroundColor}
           onChangeComplete={(color) => setBackgroundColor(color.hex)}
           triangle="hide"
@@ -16,7 +16,7 @@ const ColorPickers = ({ backgroundColor, setBackgroundColor, textColor, setTextC
       </div>
       <div className="flex flex-col">
         <div className="text-xs text-white mb-2">TEXT COLOR</div>
-        <GithubPicker
+        <TwitterPicker
           color={textColor}
           onChangeComplete={(color) => setTextColor(color.hex)}
           triangle="hide"

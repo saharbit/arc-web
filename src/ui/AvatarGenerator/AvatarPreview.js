@@ -1,5 +1,4 @@
 import React from "react";
-import { getInitials } from "./AvatarGenerator.helpers";
 
 const AvatarPreview = ({
   inputValue,
@@ -19,8 +18,8 @@ const AvatarPreview = ({
         className={`shadow-lg flex items-center justify-center ${rounded ? "rounded-full" : ""}`}
         style={{
           background: backgroundColor,
-          height: currentSize.value,
-          width: currentSize.value,
+          width: "100%",
+          aspectRatio: "1/1",
         }}
       >
         <div
