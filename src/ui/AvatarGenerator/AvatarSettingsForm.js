@@ -1,19 +1,25 @@
-import React from "react";
+import { useContext } from "react";
 import Input from "../../components/Input";
 import { SIZE_OPTIONS, FONT_FAMILY_OPTIONS } from "./AvatarGenerator.constants";
 import SelectInput from "../../components/SelectInput";
+import { observer } from "mobx-react-lite";
+import { AvatarFormContext } from "./AvatarGenerator";
 
-const AvatarSettingsForm = ({
-  inputValue,
-  setInputValue,
-  setRounded,
-  currentSize,
-  setCurrentSize,
-  fontScale,
-  setFontScale,
-  fontFamily,
-  setFontFamily,
-}) => {
+const AvatarSettingsForm = observer(() => {
+  const form = useContext(AvatarFormContext);
+
+  const {
+    inputValue,
+    setInputValue,
+    setRounded,
+    currentSize,
+    setCurrentSize,
+    fontScale,
+    setFontScale,
+    fontFamily,
+    setFontFamily,
+  } = form;
+
   return (
     <div className="flex flex-col mb-8">
       <Input
@@ -62,6 +68,6 @@ const AvatarSettingsForm = ({
       </div>
     </div>
   );
-};
+});
 
 export default AvatarSettingsForm;

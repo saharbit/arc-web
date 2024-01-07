@@ -1,5 +1,3 @@
-import React from "react";
-
 const Input = ({ value, onChange, className, id, label, ...props }) => {
   return (
     <div className={`flex flex-col ${className}`}>

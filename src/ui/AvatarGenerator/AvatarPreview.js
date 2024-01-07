@@ -1,15 +1,12 @@
-import React from "react";
+import { useContext } from "react";
+import { observer } from "mobx-react-lite";
+import { AvatarFormContext } from "./AvatarGenerator";
 
-const AvatarPreview = ({
-  inputValue,
-  rounded,
-  backgroundColor,
-  currentSize,
-  fontScale,
-  textColor,
-  fontFamily,
-  className,
-}) => {
+const AvatarPreview = observer(({ className }) => {
+  const form = useContext(AvatarFormContext);
+
+  const { inputValue, rounded, backgroundColor, currentSize, fontScale, textColor, fontFamily } = form;
+
   return (
     <div className={className}>
       <div className="text-xs text-white mb-2">PREVIEW</div>
@@ -35,6 +32,6 @@ const AvatarPreview = ({
       </div>
     </div>
   );
-};
+});
 
 export default AvatarPreview;

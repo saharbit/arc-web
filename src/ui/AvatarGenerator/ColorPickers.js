@@ -1,8 +1,14 @@
-import React from "react";
+import { useContext } from "react";
 import { TwitterPicker } from "react-color";
 import { DEFAULT_COLORS } from "./AvatarGenerator.constants";
+import { observer } from "mobx-react-lite";
+import { AvatarFormContext } from "./AvatarGenerator";
 
-const ColorPickers = ({ backgroundColor, setBackgroundColor, textColor, setTextColor }) => {
+const ColorPickers = observer(() => {
+  const form = useContext(AvatarFormContext);
+
+  const { backgroundColor, setBackgroundColor, textColor, setTextColor } = form;
+
   return (
     <div className="flex flex-col mb-8">
       <div className="flex flex-col mb-4">
@@ -25,6 +31,6 @@ const ColorPickers = ({ backgroundColor, setBackgroundColor, textColor, setTextC
       </div>
     </div>
   );
-};
+});
 
 export default ColorPickers;

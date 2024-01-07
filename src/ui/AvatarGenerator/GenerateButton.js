@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../../components/Button";
 import { toPng } from "html-to-image";
 import { saveAs } from "file-saver";
