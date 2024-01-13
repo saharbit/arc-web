@@ -1,4 +1,13 @@
-const Input = ({ value, onChange, className, id, label, ...props }) => {
+import { InputHTMLAttributes } from "react";
+
+type Props<T> = {
+  value: T;
+  onChange: (value: T) => void;
+  id: string;
+  label: string;
+} & Omit<InputHTMLAttributes<HTMLInputElement>, "onChange">;
+
+const Input = ({ value, onChange, className, id, label, ...props }: Props<any>) => {
   return (
     <div className={`flex flex-col ${className}`}>
       <label htmlFor={id} className="text-white text-xs uppercase mb-1">

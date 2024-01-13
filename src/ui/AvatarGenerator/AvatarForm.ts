@@ -6,43 +6,45 @@ import {
   DEFAULT_TEXT_COLOR,
 } from "./AvatarGenerator.constants";
 
+type SelectOption = { value: any; label: string };
+
 class AvatarForm {
-  inputValue = "";
-  rounded = false;
-  currentSize = DEFAULT_SIZE;
-  fontScale = 0.4;
-  fontFamily = DEFAULT_FONT_FAMILY;
-  backgroundColor = DEFAULT_BACKGROUND_COLOR;
-  textColor = DEFAULT_TEXT_COLOR;
+  inputValue: string = "";
+  rounded: boolean = false;
+  currentSize: SelectOption = DEFAULT_SIZE;
+  fontScale: number = 0.4;
+  fontFamily: SelectOption = DEFAULT_FONT_FAMILY;
+  backgroundColor: string = DEFAULT_BACKGROUND_COLOR;
+  textColor: string = DEFAULT_TEXT_COLOR;
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  setInputValue = (value) => {
+  setInputValue = (value: string) => {
     this.inputValue = value;
   };
-  setRounded = (value) => {
+  setRounded = (value: boolean) => {
     this.rounded = value;
   };
 
-  setCurrentSize = (value) => {
+  setCurrentSize = (value: SelectOption) => {
     this.currentSize = value;
   };
 
-  setFontScale = (value) => {
+  setFontScale = (value: number) => {
     this.fontScale = value;
   };
 
-  setFontFamily = (value) => {
+  setFontFamily = (value: SelectOption) => {
     this.fontFamily = value;
   };
 
-  setBackgroundColor = (value) => {
+  setBackgroundColor = (value: string) => {
     this.backgroundColor = value;
   };
 
-  setTextColor = (value) => {
+  setTextColor = (value: string) => {
     this.textColor = value;
   };
 

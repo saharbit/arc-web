@@ -1,27 +1,30 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { observer } from "mobx-react-lite";
 import { AvatarFormContext } from "./AvatarGenerator";
 
-const AvatarPreview = observer(({ className }) => {
-  const form = useContext(AvatarFormContext);
+type Props = {
+  className?: string;
+};
 
-  const { inputValue, rounded, backgroundColor, currentSize, fontScale, textColor, fontFamily } = form;
+const AvatarPreview = observer(({ className }: Props) => {
+  const form = useContext(AvatarFormContext);
+  const ref = useRef<HTMLDivElement>(null);
+  const { inputValue, rounded, backgroundColor, fontScale, textColor, fontFamily } = form;
 
   return (
     <div className={className}>
       <div className="text-xs text-white mb-2">PREVIEW</div>
       <div
+        ref={ref}
         id="avatar"
-        className={`shadow-lg flex items-center justify-center ${rounded ? "rounded-full" : ""}`}
+        className={`aspect-square w-full shadow-lg flex items-center justify-center ${rounded ? "rounded-full" : ""}`}
         style={{
           background: backgroundColor,
-          width: "100%",
-          aspectRatio: "1/1",
         }}
       >
         <div
           style={{
-            fontSize: fontScale * currentSize.value,
+            fontSize: `${fontScale * (ref.current?.offsetWidth || 512)}px`,
             color: textColor,
             fontFamily: fontFamily.value,
           }}

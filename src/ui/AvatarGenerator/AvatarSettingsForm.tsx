@@ -47,7 +47,7 @@ const AvatarSettingsForm = observer(() => {
       <div className="flex flex-col mb-2">
         <Input
           value={fontScale}
-          onChange={(value) => {
+          onChange={(value: number) => {
             if (value >= 0 && value <= 1) {
               setFontScale(value);
             }
