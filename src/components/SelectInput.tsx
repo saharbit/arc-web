@@ -1,6 +1,14 @@
 import Select from "react-select";
 
-const SelectInput = ({ label, value, onChange, options, className }) => {
+type SelectInputProps = {
+  label: string;
+  value: any;
+  onChange: (e: any) => void;
+  options: any;
+  className?: string;
+};
+
+const SelectInput = ({ label, value, onChange, options, className }: SelectInputProps) => {
   return (
     <div className="flex flex-col mb-2">
       <label className="text-white text-xs uppercase mb-1">{label}</label>
