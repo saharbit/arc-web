@@ -27,3 +27,10 @@ test("can select round avatar", async ({ page }) => {
   isChecked = await page.isChecked("#rounded-input");
   expect(isChecked).toBe(true);
 });
+
+test("can reset form", async ({ page }) => {
+  await page.fill("#initials-input", "SB");
+  await page.click("text=Reset");
+  const initialsInputValue = await page.locator('[placeholder="JD"]').inputValue();
+  expect(initialsInputValue).toBe("");
+});

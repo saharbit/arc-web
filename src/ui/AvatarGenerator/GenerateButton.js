@@ -2,7 +2,7 @@ import Button from "../../components/Button";
 import { toPng } from "html-to-image";
 import { saveAs } from "file-saver";
 
-const GenerateButton = () => {
+const GenerateButton = ({ ...props }) => {
   function onGenerate() {
     const avatarElement = document.getElementById("avatar");
 
@@ -11,7 +11,11 @@ const GenerateButton = () => {
     });
   }
 
-  return <Button onClick={onGenerate} text="Generate" />;
+  return (
+    <Button onClick={onGenerate} {...props}>
+      Generate
+    </Button>
+  );
 };
 
 export default GenerateButton;

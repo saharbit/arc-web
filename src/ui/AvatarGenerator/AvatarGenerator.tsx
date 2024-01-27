@@ -4,6 +4,7 @@ import ColorPickers from "./ColorPickers";
 import AvatarSettingsForm from "./AvatarSettingsForm";
 import GenerateButton from "./GenerateButton";
 import AvatarForm from "./AvatarForm";
+import ResetButton from "./ResetButton";
 
 export const AvatarFormContext = createContext<AvatarForm>({} as AvatarForm);
 
@@ -15,7 +16,8 @@ const AvatarGenerator = () => {
           <AvatarSettingsForm />
           <ColorPickers />
           <AvatarPreview className="mb-8" />
-          <GenerateButton />
+          <GenerateButton className="mb-4" />
+          <ResetButton />
         </div>
       </div>
     </AvatarFormContext.Provider>

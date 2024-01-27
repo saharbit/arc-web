@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from "react";
+import Label from "./Label";
 
 type Props<T> = {
   value: T;
@@ -10,9 +11,7 @@ type Props<T> = {
 const Input = ({ value, onChange, className, id, label, ...props }: Props<any>) => {
   return (
     <div className={`flex flex-col ${className}`}>
-      <label htmlFor={id} className="text-white text-xs uppercase mb-1">
-        {label}
-      </label>
+      <Label htmlFor={id}>{label}</Label>
       <input
         id={id}
         className="appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none"
