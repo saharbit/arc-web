@@ -6,7 +6,7 @@ const GenerateButton = ({ ...props }) => {
   function onGenerate() {
     const avatarElement = document.getElementById("avatar");
 
-    toPng(avatarElement).then(function (blob) {
+    toPng(avatarElement!).then(function (blob) {
       saveAs(blob, "avatar.png");
     });
   }
