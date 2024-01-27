@@ -4,7 +4,7 @@ import { DEFAULT_COLORS } from "./AvatarGenerator.constants";
 import { observer } from "mobx-react-lite";
 import { AvatarFormContext } from "./AvatarGenerator";
 
-const ColorPickers = observer(() => {
+const ColorPickers = () => {
   const form = useContext(AvatarFormContext);
 
   const { backgroundColor, setBackgroundColor, textColor, setTextColor } = form;
@@ -31,6 +31,6 @@ const ColorPickers = observer(() => {
       </div>
     </div>
   );
-});
+};
 
-export default ColorPickers;
+export default observer(ColorPickers);

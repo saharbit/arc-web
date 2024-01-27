@@ -5,7 +5,7 @@ import SelectInput from "../../components/SelectInput";
 import { observer } from "mobx-react-lite";
 import { AvatarFormContext } from "./AvatarGenerator";
 
-const AvatarSettingsForm = observer(() => {
+const AvatarSettingsForm = () => {
   const form = useContext(AvatarFormContext);
 
   const {
@@ -68,6 +68,6 @@ const AvatarSettingsForm = observer(() => {
       </div>
     </div>
   );
-});
+};
 
-export default AvatarSettingsForm;
+export default observer(AvatarSettingsForm);

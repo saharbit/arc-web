@@ -6,7 +6,7 @@ type Props = {
   className?: string;
 };
 
-const AvatarPreview = observer(({ className }: Props) => {
+const AvatarPreview = ({ className }: Props) => {
   const form = useContext(AvatarFormContext);
   const ref = useRef<HTMLDivElement>(null);
   const { inputValue, rounded, backgroundColor, fontScale, textColor, fontFamily } = form;
@@ -35,6 +35,6 @@ const AvatarPreview = observer(({ className }: Props) => {
       </div>
     </div>
   );
-});
+};
 
-export default AvatarPreview;
+export default observer(AvatarPreview);
