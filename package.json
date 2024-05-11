@@ -16,7 +16,7 @@
     "html-to-image": "^1.11.11",
     "mobx": "^6.12.0",
     "mobx-react-lite": "^4.0.5",
-    "next": "^14.0.4",
+    "next": "^14.1.1",
     "npm": "^10.2.5",
     "react": "18.2.0",
     "react-color": "^2.19.3",
