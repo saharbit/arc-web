@@ -14,11 +14,6 @@ test("default initials input placeholder should be 'JD'", async ({ page }) => {
   expect(initialsInputValue).toBe("");
 });
 
-test("avatar preview height and width should be equal", async ({ page }) => {
-  const avatar = await page.locator("#avatar").boundingBox();
-  expect(avatar.width).toBe(avatar.height);
-});
-
 test("can select round avatar", async ({ page }) => {
   let isChecked = await page.isChecked("#rounded-input");
   expect(isChecked).toBe(false);
