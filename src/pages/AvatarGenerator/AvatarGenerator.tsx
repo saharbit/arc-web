@@ -1,6 +1,5 @@
 import { createContext } from "react";
 import AvatarPreview from "./AvatarPreview";
-import ColorPickers from "./ColorPickers";
 import AvatarSettingsForm from "./AvatarSettingsForm";
 import GenerateButton from "./GenerateButton";
 import AvatarForm from "./AvatarForm";
@@ -12,11 +11,10 @@ const AvatarGenerator = () => {
   return (
     <AvatarFormContext.Provider value={new AvatarForm()}>
       <div className="mx-auto max-w-md">
-        <div className="faded-background flex flex-col rounded-md p-4">
+        <div className="faded-background flex flex-col rounded-md p-4 gap-1">
           <AvatarSettingsForm />
-          <ColorPickers />
-          <AvatarPreview className="mb-8" />
-          <GenerateButton className="mb-4" />
+          <AvatarPreview className="my-8" />
+          <GenerateButton className="mb-2" />
           <ResetButton />
         </div>
       </div>

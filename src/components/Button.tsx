@@ -1,5 +1,5 @@
 import { twc } from "react-twc";
 
-const Button = twc.button`bg-black hover:bg-red-50 hover:text-black text-white font-bold py-4 px-4 rounded-full focus:outline-none focus:shadow-outline transition-all duration-300`;
+const Button = twc.button`flex justify-center bg-black text-white font-bold py-4 rounded-full transition-all duration-200 hover:opacity-70`;
 
 export default Button;

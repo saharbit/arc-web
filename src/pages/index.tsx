@@ -1,5 +1,5 @@
 import Head from "next/head";
-import AvatarGenerator from "../ui/AvatarGenerator";
+import AvatarGenerator from "./AvatarGenerator/AvatarGenerator";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="content-bg min-h-screen p-4">
+      <main className="content-bg min-h-screen p-3">
         <AvatarGenerator />
       </main>
     </div>

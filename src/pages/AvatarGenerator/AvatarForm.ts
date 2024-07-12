@@ -4,7 +4,8 @@ import {
   DEFAULT_FONT_FAMILY,
   DEFAULT_SIZE,
   DEFAULT_TEXT_COLOR,
-} from "./AvatarGenerator.constants";
+  DEFAULT_BORDER_COLOR,
+} from "./consts";
 
 type SelectOption = { value: any; label: string };
 
@@ -16,6 +17,9 @@ class AvatarForm {
   fontFamily: SelectOption = DEFAULT_FONT_FAMILY;
   backgroundColor: string = DEFAULT_BACKGROUND_COLOR;
   textColor: string = DEFAULT_TEXT_COLOR;
+  borderEnabled: boolean = false;
+  borderColor: string = DEFAULT_BORDER_COLOR;
+  borderWidth: number = 1;
 
   constructor() {
     makeAutoObservable(this);
@@ -48,6 +52,18 @@ class AvatarForm {
     this.textColor = value;
   };
 
+  setBorderEnabled = (value: boolean) => {
+    this.borderEnabled = value;
+  };
+
+  setBorderColor = (value: string) => {
+    this.borderColor = value;
+  };
+
+  setBorderWidth = (value: number) => {
+    this.borderWidth = value;
+  };
+
   reset = () => {
     this.inputValue = "";
     this.rounded = false;
@@ -56,6 +72,9 @@ class AvatarForm {
     this.fontFamily = DEFAULT_FONT_FAMILY;
     this.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     this.textColor = DEFAULT_TEXT_COLOR;
+    this.borderEnabled = false;
+    this.borderColor = DEFAULT_BORDER_COLOR;
+    this.borderWidth = 1;
   };
 }
 

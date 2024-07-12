@@ -1,6 +1,8 @@
 import Button from "../../components/Button";
 import { toPng } from "html-to-image";
 import { saveAs } from "file-saver";
+import generateIcon from "./assets/download.svg";
+import Image from "next/image";
 
 const GenerateButton = ({ ...props }) => {
   function onGenerate() {
@@ -13,7 +15,8 @@ const GenerateButton = ({ ...props }) => {
 
   return (
     <Button onClick={onGenerate} {...props}>
-      Generate
+      <Image src={generateIcon} alt="Generate" />
+      <span className="ml-2">Generate</span>
     </Button>
   );
 };

@@ -11,7 +11,7 @@ type SelectInputProps = {
 
 const SelectInput = ({ label, value, onChange, options, className }: SelectInputProps) => {
   return (
-    <div className="flex flex-col mb-2">
+    <div className="flex flex-col">
       <Label>{label}</Label>
       <Select value={value} onChange={onChange} options={options} className={className} />
     </div>

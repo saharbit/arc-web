@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import Input from "../../components/Input";
-import { SIZE_OPTIONS, FONT_FAMILY_OPTIONS } from "./AvatarGenerator.constants";
+import { SIZE_OPTIONS, FONT_FAMILY_OPTIONS } from "./consts";
 import SelectInput from "../../components/SelectInput";
 import { observer } from "mobx-react-lite";
 import { AvatarFormContext } from "./AvatarGenerator";
+import { TwitterPicker } from "react-color";
+import Label from "../../components/Label";
 
 const AvatarSettingsForm = () => {
-  const form = useContext(AvatarFormContext);
-
   const {
     inputValue,
     setInputValue,
@@ -18,18 +18,16 @@ const AvatarSettingsForm = () => {
     setFontScale,
     fontFamily,
     setFontFamily,
-  } = form;
+    rounded,
+    backgroundColor,
+    setBackgroundColor,
+    textColor,
+    setTextColor,
+  } = useContext(AvatarFormContext);
 
   return (
-    <div className="flex flex-col mb-8">
-      <Input
-        label="Initials"
-        placeholder="JD"
-        className="mb-2"
-        value={inputValue}
-        onChange={setInputValue}
-        id="initials-input"
-      />
+    <div className="flex flex-col gap-1">
+      <Input label="Initials" placeholder="JD" value={inputValue} onChange={setInputValue} id="initials-input" />
       <SelectInput
         label="Avatar size"
         value={currentSize}
@@ -44,7 +42,7 @@ const AvatarSettingsForm = () => {
         options={FONT_FAMILY_OPTIONS}
         className="w-full"
       />
-      <div className="flex flex-col mb-2">
+      <div className="flex flex-col">
         <Input
           value={fontScale}
           onChange={(value: number) => {
@@ -60,8 +58,16 @@ const AvatarSettingsForm = () => {
           label="Font scale"
         />
       </div>
+      <Label>TEXT COLOR</Label>
+      <TwitterPicker color={textColor} onChangeComplete={(color) => setTextColor(color.hex)} triangle="hide" />
+      <Label>BACKGROUND COLOR</Label>
+      <TwitterPicker
+        color={backgroundColor}
+        onChangeComplete={(color) => setBackgroundColor(color.hex)}
+        triangle="hide"
+      />
       <div>
-        <input id="rounded-input" type="checkbox" onChange={(e) => setRounded(e.target.checked)} />
+        <input id="rounded-input" type="checkbox" checked={rounded} onChange={(e) => setRounded(e.target.checked)} />
         <label htmlFor="rounded-input" className="ml-2 text-white">
           Rounded
         </label>

@@ -13,7 +13,7 @@ const AvatarPreview = ({ className }: Props) => {
 
   return (
     <div className={className}>
-      <div className="text-xs text-white mb-2">PREVIEW</div>
+      <div className="text-xs text-white">PREVIEW</div>
       <div
         ref={ref}
         id="avatar"
