@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import Input from "../../components/Input";
+import Input from "../Input";
 import { SIZE_OPTIONS, FONT_FAMILY_OPTIONS } from "./consts";
-import SelectInput from "../../components/SelectInput";
+import SelectInput from "../SelectInput";
 import { observer } from "mobx-react-lite";
 import { AvatarFormContext } from "./AvatarGenerator";
 import { TwitterPicker } from "react-color";
-import Label from "../../components/Label";
+import Label from "../Label";
 
 const AvatarSettingsForm = () => {
   const {

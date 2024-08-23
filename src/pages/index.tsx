@@ -1,5 +1,5 @@
 import Head from "next/head";
-import AvatarGenerator from "./AvatarGenerator/AvatarGenerator";
+import AvatarGenerator from "../components/AvatarGenerator/AvatarGenerator";
 
 export default function Home() {
   return (

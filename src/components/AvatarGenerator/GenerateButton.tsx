@@ -1,4 +1,4 @@
-import Button from "../../components/Button";
+import Button from "../Button";
 import { toPng } from "html-to-image";
 import { saveAs } from "file-saver";
 import generateIcon from "./assets/download.svg";

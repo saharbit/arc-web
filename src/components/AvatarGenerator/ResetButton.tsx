@@ -1,4 +1,4 @@
-import Button from "../../components/Button";
+import Button from "../Button";
 import { useContext } from "react";
 import { AvatarFormContext } from "./AvatarGenerator";
 import refreshIcon from "./assets/refresh-cw.svg";
