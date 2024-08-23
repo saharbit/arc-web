@@ -9,7 +9,15 @@ type Props = {
 const AvatarPreview = ({ className }: Props) => {
   const form = useContext(AvatarFormContext);
   const ref = useRef<HTMLDivElement>(null);
-  const { inputValue, rounded, backgroundColor, fontScale, textColor, fontFamily } = form;
+  const {
+    inputValue,
+    rounded,
+    backgroundColor,
+    fontScale,
+    textColor,
+    fontFamily,
+    size: { value: pixelSize },
+  } = form;
 
   return (
     <div className={className}>
@@ -17,7 +25,7 @@ const AvatarPreview = ({ className }: Props) => {
       <div
         ref={ref}
         id="avatar"
-        className={`aspect-square w-full shadow-lg flex items-center justify-center ${rounded ? "rounded-full" : ""}`}
+        className={`aspect-square w-full shadow-lg flex items-center justify-center ${rounded ? "rounded-full" : ""} relative`}
         style={{
           background: backgroundColor,
         }}
@@ -31,6 +39,9 @@ const AvatarPreview = ({ className }: Props) => {
           className="cursor-default select-none"
         >
           {inputValue || "JD"}
+        </div>
+        <div className="absolute bottom-2 right-2 bg-white text-black text-xs px-1 py-0.5 rounded shadow-md">
+          {pixelSize}x{pixelSize}
         </div>
       </div>
     </div>

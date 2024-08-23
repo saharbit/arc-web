@@ -12,8 +12,8 @@ const AvatarSettingsForm = () => {
     inputValue,
     setInputValue,
     setRounded,
-    currentSize,
-    setCurrentSize,
+    size,
+    setSize,
     fontScale,
     setFontScale,
     fontFamily,
@@ -28,13 +28,7 @@ const AvatarSettingsForm = () => {
   return (
     <div className="flex flex-col gap-1">
       <Input label="Initials" placeholder="JD" value={inputValue} onChange={setInputValue} id="initials-input" />
-      <SelectInput
-        label="Avatar size"
-        value={currentSize}
-        onChange={setCurrentSize}
-        options={SIZE_OPTIONS}
-        className="w-full"
-      />
+      <SelectInput label="Avatar size" value={size} onChange={setSize} options={SIZE_OPTIONS} className="w-full" />
       <SelectInput
         label="Font family"
         value={fontFamily}

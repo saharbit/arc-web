@@ -12,7 +12,7 @@ type SelectOption = { value: any; label: string };
 class AvatarForm {
   inputValue: string = "";
   rounded: boolean = false;
-  currentSize: SelectOption = DEFAULT_SIZE;
+  size: SelectOption = DEFAULT_SIZE;
   fontScale: number = 0.4;
   fontFamily: SelectOption = DEFAULT_FONT_FAMILY;
   backgroundColor: string = DEFAULT_BACKGROUND_COLOR;
@@ -32,8 +32,8 @@ class AvatarForm {
     this.rounded = value;
   };
 
-  setCurrentSize = (value: SelectOption) => {
-    this.currentSize = value;
+  setSize = (value: SelectOption) => {
+    this.size = value;
   };
 
   setFontScale = (value: number) => {
@@ -67,7 +67,7 @@ class AvatarForm {
   reset = () => {
     this.inputValue = "";
     this.rounded = false;
-    this.currentSize = DEFAULT_SIZE;
+    this.size = DEFAULT_SIZE;
     this.fontScale = 0.4;
     this.fontFamily = DEFAULT_FONT_FAMILY;
     this.backgroundColor = DEFAULT_BACKGROUND_COLOR;
