@@ -11,10 +11,10 @@
     "clsx": "^2.1.1",
     "file-saver": "^2.0.5",
     "html-to-image": "^1.11.11",
-    "mobx": "^6.13.1",
+    "mobx": "^6.13.2",
     "mobx-react-lite": "^4.0.7",
-    "next": "^14.2.6",
-    "npm": "^10.8.2",
+    "next": "^14.2.11",
+    "npm": "^10.8.3",
     "react": "18.3.1",
     "react-color": "^2.19.3",
     "react-dom": "^18.3.1",
@@ -23,14 +23,14 @@
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.7",
-    "@types/node": "22.5.0",
+    "@types/node": "22.5.4",
     "@types/react-color": "^3.0.12",
     "autoprefixer": "^10.4.20",
     "eslint": "8.57.0",
-    "eslint-config-next": "^14.2.6",
-    "postcss": "^8.4.41",
+    "eslint-config-next": "^14.2.11",
+    "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "pretty-quick": "^4.0.0",
-    "tailwindcss": "^3.4.10"
+    "tailwindcss": "^3.4.11"
   }
 }
