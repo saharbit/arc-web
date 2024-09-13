@@ -40,7 +40,10 @@ const AvatarPreview = ({ className }: Props) => {
         >
           {inputValue || "JD"}
         </div>
-        <div className="absolute bottom-2 right-2 bg-white text-black text-xs px-1 py-0.5 rounded shadow-md">
+        <div
+          className="absolute bottom-2 right-2 bg-white text-black text-xs px-1 py-0.5 rounded shadow-md"
+          id="avatar-size-preview"
+        >
           {pixelSize}x{pixelSize}
         </div>
       </div>
