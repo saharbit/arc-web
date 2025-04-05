@@ -13,7 +13,7 @@ const AvatarGenerator = () => {
       <div className="mx-auto max-w-md">
         <div className="faded-background flex flex-col rounded-md p-4 gap-1">
           <AvatarSettingsForm />
-          <AvatarPreview className="my-8" />
+          <AvatarPreview className="my-4" />
           <GenerateButton className="mb-2" />
           <ResetButton />
         </div>

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Input from "../Input";
-import { SIZE_OPTIONS, FONT_FAMILY_OPTIONS } from "./consts";
+import { SIZE_OPTIONS, FONT_FAMILY_OPTIONS, COLOR_OPTIONS } from "./consts";
 import SelectInput from "../SelectInput";
 import { observer } from "mobx-react-lite";
 import { AvatarFormContext } from "./AvatarGenerator";
@@ -53,12 +53,18 @@ const AvatarSettingsForm = () => {
         />
       </div>
       <Label>TEXT COLOR</Label>
-      <TwitterPicker color={textColor} onChangeComplete={(color) => setTextColor(color.hex)} triangle="hide" />
+      <TwitterPicker
+        color={textColor}
+        onChangeComplete={(color) => setTextColor(color.hex)}
+        triangle="hide"
+        colors={COLOR_OPTIONS}
+      />
       <Label>BACKGROUND COLOR</Label>
       <TwitterPicker
         color={backgroundColor}
         onChangeComplete={(color) => setBackgroundColor(color.hex)}
         triangle="hide"
+        colors={COLOR_OPTIONS}
       />
       <div>
         <input id="rounded-input" type="checkbox" checked={rounded} onChange={(e) => setRounded(e.target.checked)} />
