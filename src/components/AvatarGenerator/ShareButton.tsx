@@ -1,27 +1,31 @@
 import Button from "../Button";
-import { toPng } from "html-to-image";
+import { toBlob, toPng } from "html-to-image";
 import { saveAs } from "file-saver";
 import shareIcon from "./assets/share.svg";
 import Image from "next/image";
 
 const ShareButton = ({ ...props }) => {
   function onGenerate() {
-    const avatarElement = document.getElementById("avatar");
+    const avatarElement = document.getElementById("avatar-preview");
 
-    toPng(avatarElement!, {
+    if (!avatarElement) {
+      return;
+    }
+
+    toBlob(avatarElement, {
       filter: (node) => node.id !== "avatar-size-preview",
-    }).then(function (blob) {
+    }).then((blob) => {
+      if (!blob) {
+        return;
+      }
+
       if (navigator.share) {
         const file = new File([blob], "avatar.png", { type: "image/png" });
 
-        navigator
-          .share({
-            files: [file],
-            title: "My Avatar",
-          })
-          .catch((error) => {
-            console.error("Error sharing:", error);
-          });
+        navigator.share({
+          files: [file],
+          title: "My Avatar",
+        });
       } else {
         saveAs(blob, "avatar.png");
       }

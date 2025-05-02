@@ -27,7 +27,7 @@ const AvatarPreview = ({ className }: Props) => {
       <div className="text-xs text-white">PREVIEW</div>
       <div
         ref={ref}
-        id="avatar"
+        id="avatar-preview"
         className={`aspect-square w-full shadow-lg flex items-center justify-center ${rounded ? "rounded-full" : "rounded"} relative`}
         style={{
           background: backgroundColor,
