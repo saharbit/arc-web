@@ -10,11 +10,11 @@ const AvatarGenerator = () => {
   return (
     <AvatarFormContext.Provider value={new AvatarForm()}>
       <div className="mx-auto max-w-md">
-        <div className="faded-background flex flex-col rounded p-4 gap-4 relative">
+        <div className="flex flex-col rounded gap-4">
           <AvatarPreview />
           <AvatarSettingsForm />
 
-          <div className="right-4 bottom-4 absolute">
+          <div className="right-5 bottom-5 fixed">
             <ShareButton />
           </div>
         </div>

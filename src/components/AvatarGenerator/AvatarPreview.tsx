@@ -23,33 +23,30 @@ const AvatarPreview = ({ className }: Props) => {
   } = form;
 
   return (
-    <div className={className}>
-      <div className="text-xs text-white">PREVIEW</div>
+    <div
+      ref={ref}
+      id="avatar-preview"
+      className={`aspect-square w-full shadow-lg flex items-center justify-center ${rounded ? "rounded-full" : "rounded"} relative`}
+      style={{
+        background: backgroundColor,
+        border: borderEnabled ? `${borderWidth}px solid ${borderColor}` : "none",
+      }}
+    >
       <div
-        ref={ref}
-        id="avatar-preview"
-        className={`aspect-square w-full shadow-lg flex items-center justify-center ${rounded ? "rounded-full" : "rounded"} relative`}
         style={{
-          background: backgroundColor,
-          border: borderEnabled ? `${borderWidth}px solid ${borderColor}` : "none",
+          fontSize: `${fontScale * (ref.current?.offsetWidth || 512)}px`,
+          color: textColor,
+          fontFamily: fontFamily.value,
         }}
+        className="cursor-default select-none"
       >
-        <div
-          style={{
-            fontSize: `${fontScale * (ref.current?.offsetWidth || 512)}px`,
-            color: textColor,
-            fontFamily: fontFamily.value,
-          }}
-          className="cursor-default select-none"
-        >
-          {inputValue || "JD"}
-        </div>
-        <div
-          className="absolute bottom-2 right-2 bg-white text-black text-xs px-1 py-0.5 rounded shadow-md"
-          id="avatar-size-preview"
-        >
-          {pixelSize}x{pixelSize}
-        </div>
+        {inputValue || "JD"}
+      </div>
+      <div
+        className="absolute bottom-2 right-2 bg-white text-black text-xs px-1 py-0.5 rounded shadow-md"
+        id="avatar-size-preview"
+      >
+        {pixelSize}x{pixelSize}
       </div>
     </div>
   );

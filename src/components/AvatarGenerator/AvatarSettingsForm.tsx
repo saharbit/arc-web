@@ -32,8 +32,24 @@ const AvatarSettingsForm = () => {
   } = useContext(AvatarFormContext);
 
   return (
-    <div className="flex flex-col gap-1">
-      <div className="grid grid-cols-2 gap-2">
+    <div className="flex flex-col">
+      <div className="flex justify-center gap-4 mb-4">
+        <div>
+          <input type="checkbox" checked={rounded} onChange={(e) => setRounded(e.target.checked)} />
+          <label htmlFor="rounded-input" className="ml-2 text-white">
+            Rounded
+          </label>
+        </div>
+
+        <div>
+          <input type="checkbox" checked={borderEnabled} onChange={(e) => setBorderEnabled(e.target.checked)} />
+          <label htmlFor="border-enabled-input" className="ml-2 text-white">
+            Border
+          </label>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-2 mb-2">
         <Input label="Initials" placeholder="JD" value={inputValue} onChange={setInputValue} id="initials-input" />
 
         <SelectInput label="Avatar size" value={size} onChange={setSize} options={SIZE_OPTIONS} className="w-full" />
@@ -62,43 +78,8 @@ const AvatarSettingsForm = () => {
         />
       </div>
 
-      <div className="grid md:grid-cols-2 md:gap-2">
-        <div>
-          <Label>TEXT COLOR</Label>
-          <GithubPicker
-            color={textColor}
-            onChangeComplete={(color) => setTextColor(color.hex)}
-            triangle="hide"
-            colors={COLOR_OPTIONS}
-          />
-        </div>
-        <div>
-          <Label>BACKGROUND COLOR</Label>
-          <GithubPicker
-            color={backgroundColor}
-            onChangeComplete={(color) => setBackgroundColor(color.hex)}
-            triangle="hide"
-            colors={COLOR_OPTIONS}
-          />
-        </div>
-      </div>
-
-      <div>
-        <input type="checkbox" checked={rounded} onChange={(e) => setRounded(e.target.checked)} />
-        <label htmlFor="rounded-input" className="ml-2 text-white">
-          Rounded
-        </label>
-      </div>
-
-      <div>
-        <input type="checkbox" checked={borderEnabled} onChange={(e) => setBorderEnabled(e.target.checked)} />
-        <label htmlFor="border-enabled-input" className="ml-2 text-white">
-          Border
-        </label>
-      </div>
-
       {borderEnabled && (
-        <>
+        <div>
           <Input
             value={borderWidth}
             onChange={(value: number) => {
@@ -120,8 +101,27 @@ const AvatarSettingsForm = () => {
             triangle="hide"
             colors={COLOR_OPTIONS}
           />
-        </>
+        </div>
       )}
+
+      <div>
+        <Label>TEXT COLOR</Label>
+        <GithubPicker
+          color={textColor}
+          onChangeComplete={(color) => setTextColor(color.hex)}
+          triangle="hide"
+          colors={COLOR_OPTIONS}
+        />
+      </div>
+      <div>
+        <Label>BACKGROUND COLOR</Label>
+        <GithubPicker
+          color={backgroundColor}
+          onChangeComplete={(color) => setBackgroundColor(color.hex)}
+          triangle="hide"
+          colors={COLOR_OPTIONS}
+        />
+      </div>
     </div>
   );
 };
