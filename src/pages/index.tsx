@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Arc</title>
+        <title>Arc Avatar</title>
         <meta name="description" content="Arc" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

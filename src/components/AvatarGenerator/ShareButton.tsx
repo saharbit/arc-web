@@ -19,7 +19,7 @@ const ShareButton = ({ ...props }) => {
         return;
       }
 
-      if (navigator.share) {
+      if (navigator.maxTouchPoints > 1) {
         const file = new File([blob], "avatar.png", { type: "image/png" });
 
         navigator.share({

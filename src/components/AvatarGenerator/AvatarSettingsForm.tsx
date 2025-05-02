@@ -49,7 +49,7 @@ const AvatarSettingsForm = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 mb-2">
+      <div className="grid grid-cols-2 gap-2 mb-1">
         <Input label="Initials" placeholder="JD" value={inputValue} onChange={setInputValue} id="initials-input" />
 
         <SelectInput label="Avatar size" value={size} onChange={setSize} options={SIZE_OPTIONS} className="w-full" />
@@ -113,6 +113,7 @@ const AvatarSettingsForm = () => {
           colors={COLOR_OPTIONS}
         />
       </div>
+
       <div>
         <Label>BACKGROUND COLOR</Label>
         <GithubPicker
