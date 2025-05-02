@@ -17,6 +17,9 @@ const AvatarPreview = ({ className }: Props) => {
     textColor,
     fontFamily,
     size: { value: pixelSize },
+    borderEnabled,
+    borderColor,
+    borderWidth,
   } = form;
 
   return (
@@ -25,9 +28,10 @@ const AvatarPreview = ({ className }: Props) => {
       <div
         ref={ref}
         id="avatar"
-        className={`aspect-square w-full shadow-lg flex items-center justify-center ${rounded ? "rounded-full" : ""} relative`}
+        className={`aspect-square w-full shadow-lg flex items-center justify-center ${rounded ? "rounded-full" : "rounded"} relative`}
         style={{
           background: backgroundColor,
+          border: borderEnabled ? `${borderWidth}px solid ${borderColor}` : "none",
         }}
       >
         <div

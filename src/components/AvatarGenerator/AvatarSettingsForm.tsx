@@ -23,6 +23,12 @@ const AvatarSettingsForm = () => {
     setBackgroundColor,
     textColor,
     setTextColor,
+    borderEnabled,
+    setBorderEnabled,
+    borderColor,
+    setBorderColor,
+    borderWidth,
+    setBorderWidth,
   } = useContext(AvatarFormContext);
 
   return (
@@ -72,6 +78,42 @@ const AvatarSettingsForm = () => {
           Rounded
         </label>
       </div>
+      <div>
+        <input
+          id="border-enabled-input"
+          type="checkbox"
+          checked={borderEnabled}
+          onChange={(e) => setBorderEnabled(e.target.checked)}
+        />
+        <label htmlFor="border-enabled-input" className="ml-2 text-white">
+          Border
+        </label>
+      </div>
+      {borderEnabled && (
+        <>
+          <Input
+            value={borderWidth}
+            onChange={(value: number) => {
+              if (value >= 0 && value <= 10) {
+                setBorderWidth(value);
+              }
+            }}
+            type="number"
+            step="1"
+            max="10"
+            min="0"
+            id="border-width-input"
+            label="Border Width"
+          />
+          <Label>BORDER COLOR</Label>
+          <TwitterPicker
+            color={borderColor}
+            onChangeComplete={(color) => setBorderColor(color.hex)}
+            triangle="hide"
+            colors={COLOR_OPTIONS}
+          />
+        </>
+      )}
     </div>
   );
 };

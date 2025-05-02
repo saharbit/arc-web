@@ -19,7 +19,7 @@ class AvatarForm {
   textColor: string = DEFAULT_TEXT_COLOR;
   borderEnabled: boolean = false;
   borderColor: string = DEFAULT_BORDER_COLOR;
-  borderWidth: number = 1;
+  borderWidth: number = 10;
 
   constructor() {
     makeAutoObservable(this);

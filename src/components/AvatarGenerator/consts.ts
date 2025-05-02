@@ -2,7 +2,6 @@ export const SIZES = [128, 256, 512];
 export const SIZE_OPTIONS = SIZES.map((size) => ({ value: size, label: `${size}px` }));
 export const DEFAULT_SIZE = SIZE_OPTIONS[1];
 export const COLOR_OPTIONS = [
-  "#FFFFFF", // White
   "#000000", // Black
   "#7CB9E8", // Sky Blue
   "#86E49D", // Fresh Mint
